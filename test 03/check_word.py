@@ -8,6 +8,7 @@ word_list = ['_' for i in range(5)]
 def check_word(input_word):
     if input_word == target_word:
         print('SPOT ON! You got it.')
+
     else:
         input_letters = list(input_word)
         for input_letter_index, input_letter in enumerate(input_letters):
@@ -17,9 +18,9 @@ def check_word(input_word):
                         word_list[input_letter_index] = input_letter
         
                     else:
-                        print(f'Letter {input_letter} is in the target word...but not on the proper spot')
+                        print(f'Letter {input_letter} on index {input_letter_index} is in the target word...but not on the proper spot')
                 
-    print(' '.join(word_list)) # convert word_list to a string separated by spaces
+        print(' '.join(word_list)) # convert word_list to a string separated by spaces
 
 
-check_word('boled')
+check_word('oooor')
