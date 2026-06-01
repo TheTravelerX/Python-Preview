@@ -1,0 +1,10 @@
+     Line 1: The quick brown fox jumps over the lazy dog.
+        Line 2: Python is an interpreted, high-level programming language.
+    Line 3: Regular expressions are powerful tools for pattern matching.
+ Line 4: This is the fourth line of the sample text file.
+Line 5: Halfway through a ten-line sample file.
+Line 6: Designing clean code requires thinking from first principles.
+Line 7: Debugging is twice as hard as writing the code in the first place.
+Line 8: Readability counts, and simplicity is better than complexity.
+Line 9: Almost at the end of the file.
+Line 10: This is the tenth and final line.
