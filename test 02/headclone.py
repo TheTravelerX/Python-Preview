@@ -7,6 +7,7 @@ script_dir = os.path.dirname(__file__)
 # Windows use '\' while Mac use '/', so can't just use script_dir + '/sample_test.txt'
 test_file = os.path.join(script_dir, 'sample_test.txt')
 
+
 def headclone(input_f, line_num, output_f):
     index = 0
     with open(input_f) as file:
@@ -19,7 +20,7 @@ def headclone(input_f, line_num, output_f):
 
                 # otherwise user writes to a specified new file
                 else: 
-                    with open(output_f, 'a') as new_file:
+                    with open(output_f, 'w') as new_file: # using 'w' instead of 'a' to prevent adding lines to the same new_file and an empty line on the top of it
                         new_file.write(f"\n{line.strip()}")
             else:
                 break
@@ -29,5 +30,5 @@ def headclone(input_f, line_num, output_f):
 
 # headclone(test_file, 3, None)
 
-headclone(test_file, 5, 'my_newfile.txt')
+# headclone(test_file, 5, 'my_new_file.txt')
 
