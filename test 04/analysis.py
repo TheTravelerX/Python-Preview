@@ -11,7 +11,11 @@ import re
 script_dir = os.path.dirname(__file__)
 file_path = os.path.join(script_dir, 'sample_paragraph.txt')
 
-pattern = ' pale| pallor'
+# \b...\b        -> Word boundaries: prevents matching subwords like 'impale' or 'palette'
+# pale           -> Base stem word
+# (s|d|ness)?    -> Optional suffixes: matches 'pales', 'paled', 'paleness', or just 'pale', (...)? refers to optional
+# | pallor       -> OR operator: also allows matching the exact word 'pallor'
+pattern = r'\b(pale(s|d|ness)?|pallor)\b'
 
 with open(file_path) as test_file:
     str_content = test_file.read() # convert the content of test_file to a string, since re.search(pattern, [string])
@@ -20,7 +24,7 @@ with open(file_path) as test_file:
 count = 0
 with open(file_path) as test_file:
     for line in test_file:
-        result = re.search(pattern, line)
+        result = re.search(pattern, line, re.IGNORECASE) # re.IGNORECASE omits the situation when "Pale" is at the head of the sentence.
         if result:
             count += 1
             print(line.strip())
